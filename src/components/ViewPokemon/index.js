@@ -12,7 +12,7 @@ import Divider from "@material-ui/core/Divider";
 const useStyles = makeStyles((theme) => ({
   cardRoot: {
     width: "100%",
-    height: "400px",
+    height: "auto",
   },
   divider: {
     marginTop: "10px",
@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
   titlePokemon: {
     alignSelf: "flex-end",
     flex: 1,
+    textAlign: 'center'
   },
   pokemonAbilities: {
     marginTop: "5px",
@@ -64,12 +65,16 @@ function ViewPokemon({ pokemon }) {
               />
             }
             <CardContent>
-              <Typography
+              {
+                caracteristicas.name !== undefined &&
+                <Typography
                 variant="h5"
                 component="h2"
                 display="block"
                 className={classes.titlePokemon}
-              ></Typography>
+                >{caracteristicas.name}</Typography>
+              }
+
             </CardContent>
           </Card>
         </Grid>
