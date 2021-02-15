@@ -61,7 +61,8 @@ const INITAL_OTHER_STATE ={
    error:false,
    abilities: [],
    location: [],
-   caracteristicas:[]
+   caracteristicas:[],
+   otherDetails:[]
 }
 
 export const otherState  =(state = INITAL_OTHER_STATE,action) => {
@@ -78,8 +79,8 @@ export const otherState  =(state = INITAL_OTHER_STATE,action) => {
            loading: false,
            error: false,
            abilities: action.payload.abilities,
-           location_area_encounters: action.payload.location,
-           otherDetails: action.payload.otherDetails,
+           location:action.payload.location,
+           otherDetails:action.payload.otherDetails,
            caracteristicas: action.payload.caracteristicas
          }
          case REQUEST_DETAILS_POKEMON_FAILURE:  {

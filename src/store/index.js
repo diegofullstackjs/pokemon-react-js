@@ -9,7 +9,7 @@ import storage from 'redux-persist/lib/storage'
 const persistConfig = {
     key: 'root',
     storage,
-    blacklist: ['pokemon']
+    blacklist: ['pokemon','uniquePokemon']
 }
 const persistedReducer = persistReducer(persistConfig,combineReducer)
 const sagaMidleware = createSagaMiddleware();

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {all,call,put,takeEvery} from 'redux-saga/effects'
+import {all,call,put,takeEvery,delay} from 'redux-saga/effects'
 import {REQUEST_DETAILS_POKEMON_REQUEST} from '../constant/'
 import {requestDetailsApiPokemonSuccess,requestAPIFailure} from '../actions'
 function* fetchUniqueApi(action){
@@ -16,7 +16,7 @@ function* fetchUniqueApi(action){
                 otherDetails: mainDetails.data ,
                 caracteristicas: caracteristicas.data
             }
-           
+            yield delay(2000)
             yield put(requestDetailsApiPokemonSuccess(payload))
         }catch{
             yield put(requestAPIFailure)
