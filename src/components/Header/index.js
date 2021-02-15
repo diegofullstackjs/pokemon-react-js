@@ -5,6 +5,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import { Link } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -40,13 +41,14 @@ function Header() {
             POKEMON HISTORY
           </Typography>
           <div className={classes.grod} />
+          <Link href="https://github.com/diegofullstackjs/pokemon-react-js" color="inherit">
           <IconButton
-            aria-label="show more"
-            aria-haspopup="true"
             color="inherit"
           >
             <GitHubIcon />
           </IconButton>
+          </Link>
+
         </Toolbar>
       </AppBar>
     </div>
