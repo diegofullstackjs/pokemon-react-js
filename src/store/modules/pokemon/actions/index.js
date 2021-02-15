@@ -14,10 +14,12 @@ export const requestAPI =  () => {
     }
 }
 
-export const requestAPISucess = (data) => {
+export const requestAPISucess = (data,offset) => {
+    console.log(offset)
     return {
         type: REQUEST_API_POKEMON_SUCCESS,
-        payload: data
+        payload: data,
+        offset: offset
     }
 }
 
