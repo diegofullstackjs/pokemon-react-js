@@ -130,6 +130,30 @@ function ViewPokemon({ pokemon }) {
                 );
             })}
           <Divider />
+          <Typography
+            variant="h3"
+            display="block"
+            className={classes.descriptionTitle}
+          >
+            localização
+          </Typography>
+          {
+            location !== undefined &&
+             location.map((lo,index) => {
+              return (
+                <Typography
+                  variant="subtitle1" 
+                  gutterBottom
+                  display="block"
+                  className={classes.descriptionTitle}
+                  key={`poder-${Date.now() - index}`}
+                >
+                  {lo.location_area.name}
+                </Typography>
+              );
+             })
+          }
+          
         </Grid>
       </Grid>
     </div>
