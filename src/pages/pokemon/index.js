@@ -16,7 +16,11 @@ function Pokemon() {
       dispatch(requestDetailsApiPokemon(parameter))
     },[dispatch,parameter])
     useEffect(() => {
-
+      if(state.caracteristicas.name){
+        document.title =  `Pokemon ${state.caracteristicas.name}`
+      }else{
+        document.title = `Carregando porkemon ....`
+      }
     },[state])
   return (
     <>
