@@ -8,6 +8,8 @@ import {
   REQUEST_DETAILS_POKEMON_SUCCESS
 } from "./constant/";
 const INITIAL_STATE = {
+  offset: 0,
+  limit: null,
   count: null,
   next: null,
   previous: null,
@@ -32,7 +34,8 @@ const state = (state = INITIAL_STATE, action) => {
           count: action.payload.count,
           next: action.payload.next,
           previous: action.payload.previous,
-          pokemon: action.payload.results
+          pokemon: action.payload.results,
+          offset: action.offset
         }
       
     case REQUEST_API_POKEMON_FAILURE:
