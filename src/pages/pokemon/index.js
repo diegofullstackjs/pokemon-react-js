@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect } from 'react';
 import {useDispatch,useSelector} from 'react-redux'
 import {useParams} from 'react-router-dom'
 import {requestDetailsApiPokemon} from '../../store/modules/pokemon/actions'
@@ -11,9 +11,13 @@ function Pokemon() {
     const dispatch = useDispatch()
     useEffect(() => {
       dispatch(requestDetailsApiPokemon(parameter))
-    },[dispatch])
+    },[dispatch,parameter])
     useEffect(() => {
-
+      if(state.caracteristicas.name){
+        document.title =  `Pokemon ${state.caracteristicas.name}`
+      }else{
+        document.title = `Carregando porkemon ....`
+      }
     },[state])
   return (
     <>
